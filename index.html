@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Tour 360</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+      #panorama {
+      width: 99vw;
+      height: 97vh;
+    }
+
+    /* --- Media Query para Celulares 📱 --- */
+    /* Estos estilos solo se aplican si el ancho de la pantalla es 768px o menos */
+    @media (max-width: 768px) {
+      #panorama {
+        /* Aquí pones el tamaño que quieres para el celular */
+        width: 96vw;
+        height: 95vh; /* Ejemplo: Ocupa todo el ancho y un poco menos del alto */
+      }
+    }
+      
+      /* --- Estilo para la nueva flecha (CORREGIDO) --- */
+      .flecha-personalizada {
+      width: 45px;          /* Ancho de tu imagen */
+      height: 35px;         /* Alto de tu imagen */
+      border-radius: 50%;  /* Hace que el botón sea circular */
+
+      /* LA PARTE IMPORTANTE: */
+      /* Usamos 'background' para reemplazar TODO el fondo original (color e imagen) */
+      /* y '!important' para darle máxima prioridad a nuestra regla. */
+      background: url('./imagenes/flecha.png') no-repeat center center !important;
+
+      /* Esto asegura que la imagen no se recorte y se ajuste bien */
+      background-size: 50px 50px !important;
+      
+    }
+
+
+
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="panorama"></div>
+    <script type="text/javascript" src="tour.js"></script>
+  </body>
+</html>
