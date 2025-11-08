@@ -36,6 +36,10 @@ const tourConfig = {
       title: "Escena 2",
       type: "equirectangular",
       panorama: "imagenes/img2.jpg",
+      // --- AGREGA TU VISTA PREVIA AQUÍ ---
+      preview: "imagenes/MartinaLogo.png",
+      // ------------------------------------
+
       pitch: 1, // Alinear la altura de la vista
       yaw: -10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -65,6 +69,10 @@ const tourConfig = {
       title: "Escena 3",
       type: "equirectangular",
       panorama: "imagenes/img3.jpg",
+      // --- AGREGA TU VISTA PREVIA AQUÍ ---
+      preview: "imagenes/MartinaLogo.png",
+      // ------------------------------------
+
       pitch: -2, // Alinear la altura de la vista
       yaw: 60, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
