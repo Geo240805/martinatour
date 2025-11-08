@@ -3,6 +3,7 @@ const tourConfig = {
   default: {
     firstScene: "escena1",
     sceneFadeDuration: 1000,
+    autoLoad: true,
   },
   scenes: {
 
@@ -10,6 +11,11 @@ const tourConfig = {
       title: "Escena 1",
       type: "equirectangular",
       panorama: "imagenes/img1.jpg",
+
+      // --- AGREGA TU VISTA PREVIA AQUÍ ---
+      preview: "imagenes/MartinaLogo.png",
+      // ------------------------------------
+
       pitch: 1, // Alinear la altura de la vista
       yaw: -87, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
