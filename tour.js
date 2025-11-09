@@ -321,10 +321,10 @@ const tourConfig = {
 
 // 2. Revisamos si la pantalla es de un celular (ancho menor o igual a 768px)
 if (window.innerWidth <= 768) {
-  // 3. Si es celular, cambiamos el 'hfov' por el valor para móvil
-  tourConfig.scenes.escena1.hfov = 50; // Zoom para celular 📱
-  tourConfig.scenes.escena2.hfov = 50; // Zoom para celular 📱
-  tourConfig.scenes.escena3.hfov = 50; // Zoom para celular 📱
+  // 3. Si es celular, usamos un bucle para cambiar el 'hfov' de TODAS las escenas
+  Object.values(tourConfig.scenes).forEach(scene => {
+    scene.hfov = 50; // Zoom para celular 📱
+  });
 }
 
 // 4. Cargamos el visor con la configuración final
