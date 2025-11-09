@@ -13,133 +13,165 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
     <style>
-      #panorama {
+    /* --- Estilo del visor principal --- */
+    #panorama {
       width: 99vw;
       height: 97vh;
+      cursor: none !important; /* Oculta la flecha del mouse */
     }
 
-
-
-
-    /* Estilo para el menu desplegable */
+    /* --- Estilo para el menu desplegable --- */
     #menu-escenas {
-    position: absolute; /* Lo pone "flotando" sobre el tour */
-    top: 20px;
-    left: 20px;
-    z-index: 1000; /* Se asegura de que esté al frente */
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: 1px solid white;
+      position: absolute; /* Lo pone "flotando" sobre el tour */
+      top: 20px;
+      left: 20px;
+      z-index: 1000; /* Se asegura de que esté al frente */
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: 1px solid white;
+    }
+
+  /* ========================================================== */
+  /* ==== CÓDIGO AÑADIDO PARA EL MENÚ POP-UP ==== */
+  /* ========================================================== */
+
+  /* --- 1. Define la animación de "ZOOM" --- */
+    @keyframes zoomIn {
+    /* Empieza invisible y pequeño */
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+    /* Termina en su tamaño normal */
+      to {
+        transform: scale(1);
+      opacity: 1;
+    }
   }
 
-
-
-
-     
-
-
-    /* Estilo para el hotspot de info */
-    .info-hotspot {
-    /* Usamos un ícono de "pregunta" de Pannellum */
-    
-    /* (También podrías usar tu propia imagen de fondo) */
-    width: 65px;
-    height: 55px;
-    border-radius: 100%;  /* Hace que el botón sea circular */
-    background: url('./hostpost/info.png') no-repeat center center !important;
-    background-size: 55px 50px !important;
-
+  /* --- 2. Estilo para el ÍCONO del hotspot de Menú --- */
+    .menu-hotspot {
+    /* Usamos un ícono de menú de un servicio gratuito */
+      background: url('https://img.icons8.com/ios-filled/50/ffffff/restaurant-menu.png') no-repeat center !important;
+      background-size: 70% !important;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid white;
     }
 
+  /* ========================================================== */
+  /* ==== FIN DEL CÓDIGO AÑADIDO ==== */
+  /* ========================================================== */
 
+  /* ESTILO PARA HOSTPOSTS DE SCROLL EN EL MENU */
 
+  /* --- Estilo para el POP-UP del Menú con Scroll --- */
+    .custom-tooltip-menu-scroll {
+      width: 200px; /* Ancho del pop-up */
+      max-width: 90vw; /* Máximo 90% del ancho de la ventana */
+      max-height: 80vh; /* Máximo 80% del alto de la ventana */
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      border: 2px solid #555;
+    /* ¡Animación de zoom al aparecer! */
+      animation: zoomIn 0.3s ease-out;
+    }
 
+    .custom-tooltip-menu-scroll h2 {
+      margin: 0 0 10px 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
 
+  /* El contenedor de las imágenes */
+  /* Estilo del menu con scroll */
+    .paginas-container {
+    /* Hacemos que tenga scroll si las imágenes son muy altas */
+      height: 291px; /* <-- altura del menu cuando se hace pequeño en el custom tooltip menu scroll */
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
 
+  /* Estilo de cada página del menú */
+    .paginas-container img {
+      width: 100%; /* La imagen ocupa todo el ancho del pop-up */
+      display: block;
+      margin-bottom: 10px; /* Espacio entre cada página */
+      background-color: #fff;
+    }
 
-    /* --- Media Query para Celulares 📱 --- */
-    /* Estos estilos solo se aplican si el ancho de la pantalla es 768px o menos */
+  /*END MENU SCROLL*/
+
+  /* --- Estilo para el hotspot de info --- */
+    .info-hotspot {
+      width: 65px;
+      height: 55px;
+      border-radius: 100%;
+      background: url('./hostpost/info.png') no-repeat center center !important;
+      background-size: 55px 50px !important;
+    }
+
+  /* --- Media Query para Celulares 📱 --- */
+  /* Estos estilos solo se aplican si el ancho de la pantalla es 768px o menos */
     @media (max-width: 768px) {
       #panorama {
-        /* Aquí pones el tamaño que quieres para el celular */
-        width: 45px;
-        height: 35px; /* Ejemplo: Ocupa todo el ancho y un poco menos del alto */
-        border-radius: 50%;  /* Hace que el botón sea circular */
+      /* Aquí pones el tamaño que quieres para el celular */
+      /* (CORREGIDO: Ahora sí ajusta el visor) */
+        width: 100vw;
+        height: 95vh;
       }
     }
-      
-      /* --- Estilo para la nueva flecha (CORREGIDO) --- */
-      .flecha-personalizada {
-      width: 45px;          /* Ancho de tu imagen */
-      height: 35px;         /* Alto de tu imagen */
-      border-radius: 50%;  /* Hace que el botón sea circular */
 
-      /* LA PARTE IMPORTANTE: */
-      /* Usamos 'background' para reemplazar TODO el fondo original (color e imagen) */
-      /* y '!important' para darle máxima prioridad a nuestra regla. */
+  /* --- Estilo para la nueva flecha (CORREGIDO) --- */
+    .flecha-personalizada {
+      width: 45px; /* Ancho de tu imagen */
+      height: 35px; /* Alto de tu imagen */
+      border-radius: 50%; /* Hace que el botón sea circular */
       background: url('./imagenes/flecha.png') no-repeat center center !important;
-
-      /* Esto asegura que la imagen no se recorte y se ajuste bien */
-      background-size: 50px 50px !important; 
+      background-size: 50px 50px !important;
     }
 
-
-
-    /*QUITAR LOADING*/
-
-    /* Esto oculta la ventana de "Loading..." */
+  /*--- QUITAR LOADING ---*/
     .pnlm-load-box {
-    display: none !important;
+      display: none !important;
     }
 
+  /* --- CURSOR PERSONALIZADO --- */
 
-    /* CURSOR PERSONALIZADO */ 
-
-    /* 1. Estilo de tu cursor personalizado de bolita */
+  /* 1. Estilo de tu cursor personalizado de bolita */
     #miCursor {
-    width: 25px;   /* Ancho de la bolita */
-    height: 25px;  /* Alto de la bolita */
-    /* Color y opacidad del cursor */
-    background-color: rgba(255, 255, 255, 0.4); /* Blanco con 40% de opacidad */
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Borde oscuro semi-transparente */
-    border-radius: 50%; /* La clave para que sea una bolita */
-    position: fixed;
-    z-index: 9999;
-    /* Importante: para que no bloquee los clics */
-    pointer-events: none; 
-    /* Oculto por defecto, el script lo mostrará */
-    display: none; 
-    /* Centra la bolita en el puntero real */
-    transform: translate(-50%, -50%);
+      width: 25px; /* Ancho de la bolita */
+      height: 25px; /* Alto de la bolita */
+      background-color: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      display: none;
+      transform: translate(-50%, -50%);
     }
 
+  /* 2. Oculta el cursor real cuando esté sobre el panorama */
+  /* (Esto ya se incluyó en el #panorama de arriba) */
 
-    /* 2. Oculta el cursor real cuando esté sobre el panorama */
-    #panorama {
-    /* ... tus estilos de width y height van aquí ... */
-    cursor: none !important; /* ¡Esta línea oculta la flecha del mouse! */
-    }
-    /* OCULTAR CURSOR ORIGINAL */
-    /* Oculta el cursor de "agarrar" de Pannellum */
+  /* --- OCULTAR CURSOR ORIGINAL --- */
     .pnlm-grab {
-    cursor: none !important;
+      cursor: none !important;
     }
-    /* Oculta el cursor de "arrastrando" de Pannellum */
     .pnlm-grabbing {
-    cursor: none !important;
+      cursor: none !important;
     }
-    /* Oculta el cursor de "puntero" sobre los hotspots */
     .pnlm-hotspot {
-    cursor: none !important;
+      cursor: none !important;
     }
-
-    
-
-  
-    </style>
+  </style>
   </head>
   <body>
     <div id="miCursor"></div> <div id="panorama"></div>

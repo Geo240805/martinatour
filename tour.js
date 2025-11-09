@@ -1,3 +1,30 @@
+// Función para crear un pop-up con MÚLTIPLES IMÁGENES (para el menú)
+function hotspotMenuPaginas(hotSpotDiv, args) {
+  hotSpotDiv.classList.add('custom-tooltip-menu-scroll');
+  
+  // Crea el título
+  let titulo = document.createElement('h2');
+  titulo.innerHTML = args.titulo;
+  hotSpotDiv.appendChild(titulo);
+  
+  // Crea el contenedor de las imágenes
+  let paginasDiv = document.createElement('div');
+  paginasDiv.classList.add('paginas-container');
+  
+  // Añade cada imagen de la lista
+  args.paginas.forEach(urlImagen => {
+    let img = document.createElement('img');
+    img.src = urlImagen;
+    paginasDiv.appendChild(img);
+  });
+  
+  hotSpotDiv.appendChild(paginasDiv);
+} 
+
+// INICIO DEL TOUR VIRTUAL
+
+
+
 // 1. Guardamos tu configuración completa en una variable
 const tourConfig = {
   default: {
@@ -54,7 +81,27 @@ const tourConfig = {
       yaw: -10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
-        {
+
+
+      {
+        pitch: 0,
+        yaw: 90,
+        // "type": "info", <-- ¡DEJA ESTO VACÍO O QUÍTALO PARA QUE FUNCIONE CON CLIC!
+  
+        cssClass: "", // El mismo ícono de menú de antes
+  
+        createTooltipFunc: hotspotMenuPaginas, // Llama a la nueva función
+        createTooltipArgs: {
+          titulo: "Nuestro Menú",
+          paginas: [
+            "image-menu/img1.jpg",
+            "image-menu/img2.jpg",
+            // ...puedes añadir todas las páginas que quieras...
+          ]
+        }
+      },
+    
+      {
           // Personalizar hotspot de información
           pitch: -15,  // Alinear la altura del hotspot
           yaw: 50,   // Alinear la posición horizontal del hotspot
