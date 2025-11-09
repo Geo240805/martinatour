@@ -83,7 +83,7 @@ const tourConfig = {
           pitch: -25, // Alinear la altura de la flecha
           yaw: -125, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "back",
+          text: "",
           sceneId: "escena2",
           cssClass: "flecha-personalizada",
         },
@@ -322,9 +322,9 @@ const tourConfig = {
 // 2. Revisamos si la pantalla es de un celular (ancho menor o igual a 768px)
 if (window.innerWidth <= 768) {
   // 3. Si es celular, cambiamos el 'hfov' por el valor para móvil
-  tourConfig.scenes.escena1.hfov = 60; // Zoom para celular 📱
-  tourConfig.scenes.escena2.hfov = 60; // Zoom para celular 📱
-  tourConfig.scenes.escena3.hfov = 60; // Zoom para celular 📱
+  tourConfig.scenes.escena1.hfov = 50; // Zoom para celular 📱
+  tourConfig.scenes.escena2.hfov = 50; // Zoom para celular 📱
+  tourConfig.scenes.escena3.hfov = 50; // Zoom para celular 📱
 }
 
 // 4. Cargamos el visor con la configuración final
