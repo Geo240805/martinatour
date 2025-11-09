@@ -18,7 +18,16 @@ function hotspotMenuPaginas(hotSpotDiv, args) {
     paginasDiv.appendChild(img);
   });
   
+
+  // CLICK PARA VER MENU MÁS GRANDE
   hotSpotDiv.appendChild(paginasDiv);
+  // Añade el evento de clic para hacer zoom
+  hotSpotDiv.addEventListener('click', (e) => {
+    // Evita que el clic "atraviese" el pop-up y lo cierre
+    e.stopPropagation(); 
+    // Añade o quita la clase 'zoomed' para ampliar/encoger
+    hotSpotDiv.classList.toggle('zoomed');
+  });
 } 
 
 // INICIO DEL TOUR VIRTUAL
@@ -37,7 +46,7 @@ const tourConfig = {
     // Velocidad y dirección (ej. -2 grados por segundo, gira a la izquierda)
     autoRotate: -2, 
     // Tiempo de inactividad para empezar (ej. 2 segundos)
-    autoRotateInactivityDelay: 2000, 
+    autoRotateInactivityDelay: 5000, 
 
 
     // QUITA LOS CONTROLES DEL VISOR

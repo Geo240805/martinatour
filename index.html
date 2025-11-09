@@ -34,52 +34,16 @@
       border: 1px solid white;
     }
 
-  /* ========================================================== */
-  /* ==== CÓDIGO AÑADIDO PARA EL MENÚ POP-UP ==== */
-  /* ========================================================== */
-
-  /* --- 1. Define la animación de "ZOOM" --- */
-    @keyframes zoomIn {
-    /* Empieza invisible y pequeño */
-      from {
-        transform: scale(0);
-        opacity: 0;
-      }
-    /* Termina en su tamaño normal */
-      to {
-        transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  /* --- 2. Estilo para el ÍCONO del hotspot de Menú --- */
-    .menu-hotspot {
-    /* Usamos un ícono de menú de un servicio gratuito */
-      background: url('https://img.icons8.com/ios-filled/50/ffffff/restaurant-menu.png') no-repeat center !important;
-      background-size: 70% !important;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-
-  /* ========================================================== */
-  /* ==== FIN DEL CÓDIGO AÑADIDO ==== */
-  /* ========================================================== */
-
   /* ESTILO PARA HOSTPOSTS DE SCROLL EN EL MENU */
-
   /* --- Estilo para el POP-UP del Menú con Scroll --- */
     .custom-tooltip-menu-scroll {
       width: 200px; /* Ancho del pop-up */
       max-width: 90vw; /* Máximo 90% del ancho de la ventana */
       max-height: 80vh; /* Máximo 80% del alto de la ventana */
       background: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      border: 2px solid #555;
-    /* ¡Animación de zoom al aparecer! */
-      animation: zoomIn 0.3s ease-out;
+      border-radius: 8px;
+      padding: 10px;
+      border: 2px solid  #EB268F;
     }
 
     .custom-tooltip-menu-scroll h2 {
@@ -105,8 +69,9 @@
       margin-bottom: 10px; /* Espacio entre cada página */
       background-color: #fff;
     }
-
   /*END MENU SCROLL*/
+
+
 
   /* --- Estilo para el hotspot de info --- */
     .info-hotspot {
