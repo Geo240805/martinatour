@@ -8,7 +8,7 @@ const tourConfig = {
   scenes: {
 
     escena1: {
-      title: "Escena 1",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img1.jpg",
 
@@ -25,7 +25,7 @@ const tourConfig = {
           pitch: -15, // Alinear la altura de la flecha
           yaw: -90, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a Escena 2",
+          text: "",
           sceneId: "escena2",
           cssClass: "flecha-personalizada",
         },
@@ -33,13 +33,9 @@ const tourConfig = {
     },
 
     escena2: {
-      title: "Escena 2",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img2.jpg",
-      // --- AGREGA TU VISTA PREVIA AQUÍ ---
-      preview: "imagenes/MartinaLogo.png",
-      // ------------------------------------
-
       pitch: 1, // Alinear la altura de la vista
       yaw: -10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -49,7 +45,7 @@ const tourConfig = {
           pitch: -10, // Alinear la altura de la flecha
           yaw: -15, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 3",
+          text: "",
           sceneId: "escena3",
           cssClass: "flecha-personalizada",
         },
@@ -58,7 +54,7 @@ const tourConfig = {
           pitch: -20,  // Alinear la altura de la flecha
           yaw: -165, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Regresar a Escena 1",
+          text: "",
           sceneId: "escena1",
           cssClass: "flecha-personalizada",
         },
@@ -66,13 +62,9 @@ const tourConfig = {
     },
 
     escena3: {
-      title: "Escena 3",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img3.jpg",
-      // --- AGREGA TU VISTA PREVIA AQUÍ ---
-      preview: "imagenes/MartinaLogo.png",
-      // ------------------------------------
-
       pitch: -2, // Alinear la altura de la vista
       yaw: 60, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -82,7 +74,7 @@ const tourConfig = {
           pitch: -11, // Alinear la altura de la flecha
           yaw: 65, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 4",
+          text: "",
           sceneId: "escena4",
           cssClass: "flecha-personalizada",
         },
@@ -99,7 +91,7 @@ const tourConfig = {
     },
 
     escena4: {
-      title: "Escena 4",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img4.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -111,7 +103,7 @@ const tourConfig = {
           pitch: -10, // Alinear la altura de la flecha
           yaw: -40, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 5",
+          text: "",
           sceneId: "escena5",
           cssClass: "flecha-personalizada",
         },
@@ -129,7 +121,7 @@ const tourConfig = {
     },
 
     escena5: {
-      title: "Escena 5",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img5.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -141,7 +133,7 @@ const tourConfig = {
           pitch: -11, // Alinear la altura de la flecha
           yaw: 14, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 6",
+          text: "",
           sceneId: "escena6",
           cssClass: "flecha-personalizada",
         },
@@ -158,7 +150,7 @@ const tourConfig = {
     },
 
     escena6: {
-      title: "Escena 6",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img6.jpg",
       pitch: -4, // Alinear la altura de la vista
@@ -170,7 +162,7 @@ const tourConfig = {
           pitch: -11, // Alinear la altura de la flecha
           yaw: -50, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 7",
+          text: "",
           sceneId: "escena7",
           cssClass: "flecha-personalizada",
         },
@@ -179,7 +171,7 @@ const tourConfig = {
           pitch: -12, // Alinear la altura de la flecha
           yaw: -140, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena5",
           cssClass: "flecha-personalizada",
         },
@@ -188,7 +180,7 @@ const tourConfig = {
           pitch: -12, // Alinear la altura de la flecha
           yaw: 129, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "pool",
+          text: "",
           sceneId: "escena9",
           cssClass: "flecha-personalizada",
         },
@@ -196,7 +188,7 @@ const tourConfig = {
     },
 
     escena7: {
-      title: "Escena 7",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img7.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -208,7 +200,7 @@ const tourConfig = {
           pitch: -11, // Alinear la altura de la flecha
           yaw: 28, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 8",
+          text: "",
           sceneId: "escena8",
           cssClass: "flecha-personalizada",
         },
@@ -217,7 +209,7 @@ const tourConfig = {
           pitch: -17, // Alinear la altura de la flecha
           yaw: -145, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena6",
           cssClass: "flecha-personalizada",
         },
@@ -225,7 +217,7 @@ const tourConfig = {
     },
 
     escena8: {
-      title: "Escena 8",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/img8.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -237,7 +229,7 @@ const tourConfig = {
           pitch: -10, // Alinear la altura de la flecha
           yaw: 85, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena7",
           cssClass: "flecha-personalizada",
         },
@@ -247,7 +239,7 @@ const tourConfig = {
     // ESCENAS DE LA POOL
 
     escena9: {
-      title: "Escena 9",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/imgpool.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -259,7 +251,7 @@ const tourConfig = {
           pitch: -9, // Alinear la altura de la flecha
           yaw: 22, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 10",
+          text: "",
           sceneId: "escena10",
           cssClass: "flecha-personalizada",
         },
@@ -268,7 +260,7 @@ const tourConfig = {
           pitch: -12.5, // Alinear la altura de la flecha
           yaw: -149, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena6",
           cssClass: "flecha-personalizada",
         },
@@ -276,7 +268,7 @@ const tourConfig = {
     },
 
     escena10: {
-      title: "Escena 10",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/poolcentro.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -288,7 +280,7 @@ const tourConfig = {
           pitch: -14, // Alinear la altura de la flecha
           yaw: 76, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Ir a escena 11",
+          text: "",
           sceneId: "escena11",
           cssClass: "flecha-personalizada",
         },
@@ -297,7 +289,7 @@ const tourConfig = {
           pitch: -10, // Alinear la altura de la flecha
           yaw: -75, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena9",
           cssClass: "flecha-personalizada",
         },
@@ -305,7 +297,7 @@ const tourConfig = {
     },
 
     escena11: {
-      title: "Escena 11",
+      title: "",
       type: "equirectangular",
       panorama: "imagenes/pool3.jpg",
       pitch: -2, // Alinear la altura de la vista
@@ -317,7 +309,7 @@ const tourConfig = {
           pitch: -10, // Alinear la altura de la flecha
           yaw: 190, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena10",
           cssClass: "flecha-personalizada",
         },

@@ -44,14 +44,91 @@
       
     }
 
+    /* Esto oculta la ventana de "Loading..." */
+    .pnlm-load-box {
+    display: none !important;
+    }
+
+    
 
 
 
-      
+    /* --- Estilo para el cursor de bolita --- */
+
+    /* 1. Estilo de tu cursor personalizado */
+    #miCursor {
+    width: 25px;   /* Ancho de la bolita */
+    height: 25px;  /* Alto de la bolita */
+  
+    /* Color y opacidad */
+    background-color: rgba(255, 255, 255, 0.4); /* Blanco con 40% de opacidad */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Borde oscuro semi-transparente */
+  
+    border-radius: 50%; /* La clave para que sea una bolita */
+    position: fixed;
+    z-index: 9999;
+  
+    /* Importante: para que no bloquee los clics */
+    pointer-events: none; 
+  
+    /* Oculto por defecto, el script lo mostrará */
+    display: none; 
+  
+    /* Centra la bolita en el puntero real */
+    transform: translate(-50%, -50%);
+    }
+
+    /* 2. Oculta el cursor real cuando esté sobre el panorama */
+    #panorama {
+    /* ... tus estilos de width y height van aquí ... */
+    cursor: none !important; /* ¡Esta línea oculta la flecha del mouse! */
+    }
+
+    /* OCULTAR CURSOR ORIGINAL */
+
+    /* Oculta el cursor de "agarrar" de Pannellum */
+    .pnlm-grab {
+    cursor: none !important;
+    }
+
+    /* Oculta el cursor de "arrastrando" de Pannellum */
+    .pnlm-grabbing {
+    cursor: none !important;
+    }
+
+    /* Oculta el cursor de "puntero" sobre los hotspots */
+    .pnlm-hotspot {
+    cursor: none !important;
+    }
+
+  
     </style>
   </head>
   <body>
+    <div id="miCursor"></div> <div id="panorama"></div>
     <div id="panorama"></div>
     <script type="text/javascript" src="tour.js"></script>
+    <script>
+    const panorama = document.getElementById('panorama');
+    const cursor = document.getElementById('miCursor');
+
+    // Muestra el cursor personalizado cuando entra al panorama
+    panorama.addEventListener('mouseenter', () => {
+      cursor.style.display = 'block';
+    });
+
+    // Oculta el cursor cuando sale del panorama
+    panorama.addEventListener('mouseleave', () => {
+      cursor.style.display = 'none';
+    });
+
+    // Mueve el cursor con el mouse
+    panorama.addEventListener('mousemove', (e) => {
+      // e.clientX es la posición X del mouse
+      // e.clientY es la posición Y del mouse
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
   </body>
 </html>
