@@ -4,7 +4,21 @@ const tourConfig = {
     firstScene: "escena1",
     sceneFadeDuration: 1000,
     autoLoad: true,
+
+    //  AUTOROTACION 
+    
+    // Velocidad y dirección (ej. -2 grados por segundo, gira a la izquierda)
+    autoRotate: -2, 
+    // Tiempo de inactividad para empezar (ej. 2 segundos)
+    autoRotateInactivityDelay: 2000, 
+
+
+    // QUITA LOS CONTROLES DEL VISOR
+
+    showControls: false,
+
   },
+
   scenes: {
 
     escena1: {
@@ -40,6 +54,14 @@ const tourConfig = {
       yaw: -10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
+        {
+          // Personalizar hotspot de información
+          pitch: -15,  // Alinear la altura del hotspot
+          yaw: 50,   // Alinear la posición horizontal del hotspot
+          type: "info", // <-- TIPO INFO
+          text: "Este es un Cama de Playa. ¡Son muy cómodas e incluyen servicio de toallas!",
+          cssClass: "info-hotspot" // <-- Le damos un estilo diferente
+        },
         {
           // Personalizar flecha para avanzar
           pitch: -10, // Alinear la altura de la flecha
@@ -327,5 +349,11 @@ if (window.innerWidth <= 768) {
   });
 }
 
-// 4. Cargamos el visor con la configuración final
-pannellum.viewer("panorama", tourConfig);
+// 4. Cargamos el visor Y LO GUARDAMOS EN UNA VARIABLE
+const viewer = pannellum.viewer("panorama", tourConfig);
+
+// 5. Conectamos el menú desplegable con el visor
+document.getElementById('menu-escenas').addEventListener('change', function() {
+  // 'this.value' es el ID de la escena que el usuario eligió (ej. "escena2")
+  viewer.loadScene(this.value);
+});

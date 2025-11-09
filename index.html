@@ -18,13 +18,56 @@
       height: 97vh;
     }
 
+
+
+
+    /* Estilo para el menu desplegable */
+    #menu-escenas {
+    position: absolute; /* Lo pone "flotando" sobre el tour */
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Se asegura de que esté al frente */
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+  }
+
+
+
+
+     
+
+
+    /* Estilo para el hotspot de info */
+    .info-hotspot {
+    /* Usamos un ícono de "pregunta" de Pannellum */
+    
+    /* (También podrías usar tu propia imagen de fondo) */
+    width: 65px;
+    height: 55px;
+    border-radius: 100%;  /* Hace que el botón sea circular */
+    background: url('./hostpost/info.png') no-repeat center center !important;
+    background-size: 55px 50px !important;
+
+    }
+
+
+
+
+
+
+
     /* --- Media Query para Celulares 📱 --- */
     /* Estos estilos solo se aplican si el ancho de la pantalla es 768px o menos */
     @media (max-width: 768px) {
       #panorama {
         /* Aquí pones el tamaño que quieres para el celular */
-        width: 96vw;
-        height: 95vh; /* Ejemplo: Ocupa todo el ancho y un poco menos del alto */
+        width: 45px;
+        height: 35px; /* Ejemplo: Ocupa todo el ancho y un poco menos del alto */
+        border-radius: 50%;  /* Hace que el botón sea circular */
       }
     }
       
@@ -40,83 +83,89 @@
       background: url('./imagenes/flecha.png') no-repeat center center !important;
 
       /* Esto asegura que la imagen no se recorte y se ajuste bien */
-      background-size: 50px 50px !important;
-      
+      background-size: 50px 50px !important; 
     }
+
+
+
+    /*QUITAR LOADING*/
 
     /* Esto oculta la ventana de "Loading..." */
     .pnlm-load-box {
     display: none !important;
     }
 
-    
 
+    /* CURSOR PERSONALIZADO */ 
 
-
-    /* --- Estilo para el cursor de bolita --- */
-
-    /* 1. Estilo de tu cursor personalizado */
+    /* 1. Estilo de tu cursor personalizado de bolita */
     #miCursor {
     width: 25px;   /* Ancho de la bolita */
     height: 25px;  /* Alto de la bolita */
-  
-    /* Color y opacidad */
+    /* Color y opacidad del cursor */
     background-color: rgba(255, 255, 255, 0.4); /* Blanco con 40% de opacidad */
     border: 1px solid rgba(0, 0, 0, 0.5); /* Borde oscuro semi-transparente */
-  
     border-radius: 50%; /* La clave para que sea una bolita */
     position: fixed;
     z-index: 9999;
-  
     /* Importante: para que no bloquee los clics */
     pointer-events: none; 
-  
     /* Oculto por defecto, el script lo mostrará */
     display: none; 
-  
     /* Centra la bolita en el puntero real */
     transform: translate(-50%, -50%);
     }
+
 
     /* 2. Oculta el cursor real cuando esté sobre el panorama */
     #panorama {
     /* ... tus estilos de width y height van aquí ... */
     cursor: none !important; /* ¡Esta línea oculta la flecha del mouse! */
     }
-
     /* OCULTAR CURSOR ORIGINAL */
-
     /* Oculta el cursor de "agarrar" de Pannellum */
     .pnlm-grab {
     cursor: none !important;
     }
-
     /* Oculta el cursor de "arrastrando" de Pannellum */
     .pnlm-grabbing {
     cursor: none !important;
     }
-
     /* Oculta el cursor de "puntero" sobre los hotspots */
     .pnlm-hotspot {
     cursor: none !important;
     }
+
+    
 
   
     </style>
   </head>
   <body>
     <div id="miCursor"></div> <div id="panorama"></div>
+
+    <!--Agrega un menú desplegable para seleccionar escenas-->
+    <select id="menu-escenas">
+    <option value="escena1">1. Entrada Principal</option>
+    <option value="escena8">2. Área de Camas</option>
+    <option value="escena2">3. Restaurante</option>
+    <option value="escena10">3. Pool</option>
+    </select>
+    <!--Termina menú desplegable-->
+
     <div id="panorama"></div>
     <script type="text/javascript" src="tour.js"></script>
     <script>
     const panorama = document.getElementById('panorama');
     const cursor = document.getElementById('miCursor');
 
+
+    // LOGICA PARA EL CURSOR PERSONALIZADO
+
     // Muestra el cursor personalizado cuando entra al panorama
     panorama.addEventListener('mouseenter', () => {
       cursor.style.display = 'block';
     });
-
     // Oculta el cursor cuando sale del panorama
     panorama.addEventListener('mouseleave', () => {
       cursor.style.display = 'none';
