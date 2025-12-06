@@ -57,7 +57,7 @@ const tourConfig = {
     escena1: {
       title: "",
       type: "equirectangular",
-      panorama: "images/start.JPG",
+      panorama: "images/start.jpg",
       preview: "imagenes/MartinaLogo.png",
       pitch: 1, // Alinear la altura de la vista
       yaw: 10, // Centrar la vista inicial
