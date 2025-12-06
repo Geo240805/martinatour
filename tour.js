@@ -46,7 +46,7 @@ const tourConfig = {
     // Velocidad y dirección (ej. -2 grados por segundo, gira a la izquierda)
     autoRotate: -2, 
     // Tiempo de inactividad para empezar (ej. 2 segundos)
-    autoRotateInactivityDelay: 5000, 
+    autoRotateInactivityDelay: 1000, 
 
 
     // QUITA LOS CONTROLES DEL VISOR
@@ -60,22 +60,17 @@ const tourConfig = {
     escena1: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img1.jpg",
-
-      // --- AGREGA TU VISTA PREVIA AQUÍ ---
+      panorama: "images/start.JPG",
       preview: "imagenes/MartinaLogo.png",
-      // ------------------------------------
-
       pitch: 1, // Alinear la altura de la vista
       yaw: -87, // Centrar la vista inicial
-      hfov: 115, // Zoom para computadora 💻
+      hfov: 115,
       hotSpots: [
         {
-          // Personalizar flecha para avanzar
-          pitch: -15, // Alinear la altura de la flecha
-          yaw: -90, // Alinear la posición horizontal de la flecha
+          // Personalizar hotspot para avanzar
+          pitch: -15, // Coordenadas de los hotspots en altura
+          yaw: -90, // Coordenadas de los hotspots en horizontal
           type: "scene",
-          text: "",
           sceneId: "escena2",
           cssClass: "flecha-personalizada",
         },
@@ -85,13 +80,11 @@ const tourConfig = {
     escena2: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img2.jpg",
-      pitch: 1, // Alinear la altura de la vista
-      yaw: -10, // Centrar la vista inicial
-      hfov: 115, // Zoom para computadora 💻
+      panorama: "images/prueba2.jpg",
+      pitch: 1, // Coordenadas de la hotspots en altura
+      yaw: -10, // Coordenadas de la hotspots en horizontal
+      hfov: 115,
       hotSpots: [
-
-
       {
         pitch: 0,
         yaw: 90,
@@ -142,7 +135,7 @@ const tourConfig = {
     escena3: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img3.jpg",
+      panorama: "images/4.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: 60, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -171,7 +164,7 @@ const tourConfig = {
     escena4: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img4.jpg",
+      panorama: "images/5.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: -40, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -201,7 +194,7 @@ const tourConfig = {
     escena5: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img5.jpg",
+      panorama: "images/6.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: 15, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -230,7 +223,7 @@ const tourConfig = {
     escena6: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img6.jpg",
+      panorama: "images/7.jpg",
       pitch: -4, // Alinear la altura de la vista
       yaw: 40, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -268,7 +261,7 @@ const tourConfig = {
     escena7: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img7.jpg",
+      panorama: "images/8.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: 33, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -297,7 +290,7 @@ const tourConfig = {
     escena8: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/img8.jpg",
+      panorama: "images/9.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: -90, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
