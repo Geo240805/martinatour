@@ -144,7 +144,7 @@ const tourConfig = {
     escena3: {
       title: "",
       type: "equirectangular",
-      panorama: "images/4.jpg",
+      panorama: "images/otra.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: -30, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
