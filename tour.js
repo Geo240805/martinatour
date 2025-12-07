@@ -417,7 +417,7 @@ const tourConfig = {
 if (window.innerWidth <= 768) {
   // 3. Si es celular, usamos un bucle para cambiar el 'hfov' de TODAS las escenas
   Object.values(tourConfig.scenes).forEach(scene => {
-    scene.hfov = 80; // Zoom para celular 📱
+    scene.hfov = 76; // Zoom para celular 📱
   });
 }
 
