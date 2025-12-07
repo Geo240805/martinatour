@@ -38,7 +38,7 @@ function hotspotMenuPaginas(hotSpotDiv, args) {
 const tourConfig = {
   default: {
     firstScene: "escena1",
-    sceneFadeDuration: 1000,
+    sceneFadeDuration: 3000,
     autoLoad: true,
     //  AUTOROTACION 
     // Velocidad y dirección (ej. -2 grados por segundo, gira a la izquierda)
@@ -62,6 +62,10 @@ const tourConfig = {
       pitch: 1, // Alinear la altura de la vista
       yaw: 10, // Centrar la vista inicial
       hfov: 115,
+      minYaw: -85,  // Tope izquierdo (prueba con -90, -120, etc.)
+      maxYaw: 95,
+      minPitch: -100,  // Tope hacia ABAJO (evita mirar al suelo)
+
       hotSpots: [
         {
           // Personalizar hotspot
@@ -171,13 +175,13 @@ const tourConfig = {
       type: "equirectangular",
       panorama: "images/6.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: -40, // Centrar la vista inicial
+      yaw: 10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
         {
           // Personalizar flecha para avanzar
           pitch: -10, // Alinear la altura de la flecha
-          yaw: -40, // Alinear la posición horizontal de la flecha
+          yaw: 5, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena5",
@@ -186,7 +190,7 @@ const tourConfig = {
         {
           // Personalizar flecha para regresar
           pitch: -11, // Alinear la altura de la flecha
-          yaw: 77, // Alinear la posición horizontal de la flecha
+          yaw: -82, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "back",
           sceneId: "escena3",
@@ -201,9 +205,23 @@ const tourConfig = {
       type: "equirectangular",
       panorama: "images/7.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: 15, // Centrar la vista inicial
+      yaw: 180, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {
           // Personalizar flecha para avanzar
           pitch: -11, // Alinear la altura de la flecha
@@ -402,6 +420,30 @@ if (window.innerWidth <= 768) {
     scene.hfov = 50; // Zoom para celular 📱
   });
 }
+
+// =============================================================
+// ==== AUTOMATIZACIÓN: Poner el logo abajo en TODAS las escenas
+// =============================================================
+
+// 1. Definimos el hotspot del logo
+const hotspotNadir = {
+    "pitch": -90,
+    "yaw": 0,
+    "type": "info",
+    "cssClass": "nadir-hotspot"
+};
+
+// 2. Recorremos todas las escenas y les inyectamos el logo
+Object.values(tourConfig.scenes).forEach(scene => {
+    // Si la escena no tiene lista de hotspots, creamos una vacía
+    if (!scene.hotSpots) {
+        scene.hotSpots = [];
+    }
+    // Agregamos el logo a la lista de esa escena
+    scene.hotSpots.push(hotspotNadir);
+});
+
+// =============================================================
 
 // 4. Cargamos el visor Y LO GUARDAMOS EN UNA VARIABLE
 const viewer = pannellum.viewer("panorama", tourConfig);
