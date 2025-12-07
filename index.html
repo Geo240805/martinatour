@@ -15,9 +15,9 @@
     <style>
     /*Estilo del visor principal*/
     #panorama {
-      width: 99vw;
-      height: 97vh;
-      cursor: none !important; 
+      width: 98.4vw;
+      height: 98.4vh; 
+      
     }
 
     /* --- Estilo para el menu desplegable --- */
@@ -25,7 +25,7 @@
       position: absolute; /* Lo pone "flotando" sobre el tour */
       top: 20px;
       left: 20px;
-      z-index: 1000; /* Se asegura de que esté al frente */
+      z-index: 100; /* Se asegura de que esté al frente */
       padding: 8px;
       font-size: 16px;
       border-radius: 8px;
@@ -143,16 +143,14 @@
       cursor: none !important;
     }
 
-
-
     /* --- Estilo para el Logo que tapa el tripié (Nadir) --- */
     .nadir-hotspot {
     /* IMPORTANTE: Revisa si tu carpeta es 'images' o 'imagenes' */
       background: url('images/nadir.png') no-repeat center center !important;
       background-size: contain !important;
     /* Tamaño del parche (ajústalo si el tripié se sigue viendo) */
-      width: 900px; 
-      height: 900px; 
+      width: 1500px; 
+      height: 1500px; 
     /* Esto hace que si le das clic no pase nada (es solo visual) */
       pointer-events: none; 
     }

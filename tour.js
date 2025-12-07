@@ -38,13 +38,13 @@ function hotspotMenuPaginas(hotSpotDiv, args) {
 const tourConfig = {
   default: {
     firstScene: "escena1",
-    sceneFadeDuration: 3000,
+    sceneFadeDuration: 1000,
     autoLoad: true,
     //  AUTOROTACION 
     // Velocidad y dirección (ej. -2 grados por segundo, gira a la izquierda)
-    autoRotate: -2, 
+    autoRotate: -1, 
     // Tiempo de inactividad para empezar (ej. 2 segundos)
-    autoRotateInactivityDelay: 1000, 
+    autoRotateInactivityDelay: 3000, 
     // QUITA LOS CONTROLES DEL VISOR
     showControls: false,
 
@@ -167,6 +167,71 @@ const tourConfig = {
           sceneId: "escena2",
           cssClass: "flecha-personalizada",
         },
+        {
+          // Personalizar flecha para avanzar
+          pitch: -10, // Alinear la altura de la flecha
+          yaw: -120, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenaextra",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
+    escenaextra: {
+      title: "",
+      type: "equirectangular",
+      panorama: "images/4.5.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: 10, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 💻
+      hotSpots: [
+        {
+          // Personalizar flecha para avanzar
+          pitch: -11, // Alinear la altura de la flecha
+          yaw: -5, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenaextra2",
+          cssClass: "flecha-personalizada",
+        },
+        {
+          // Personalizar flecha para regresar
+          pitch: -18, // Alinear la altura de la flecha
+          yaw: 145, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena3",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
+    escenaextra2: {
+      title: "",
+      type: "equirectangular",
+      panorama: "images/9.5.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: 55, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 💻
+      hotSpots: [
+        {
+          // Personalizar flecha para avanzar
+          pitch: -10, // Alinear la altura de la flecha
+          yaw: 90, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena7",
+          cssClass: "flecha-personalizada",
+        },
+        {
+          // Personalizar flecha para regresar
+          pitch: -11, // Alinear la altura de la flecha
+          yaw: -185, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenaextra",
+          cssClass: "flecha-personalizada",
+        },
       ],
     },
 
@@ -192,40 +257,45 @@ const tourConfig = {
           pitch: -11, // Alinear la altura de la flecha
           yaw: -82, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "back",
+          text: "",
           sceneId: "escena3",
           cssClass: "flecha-personalizada",
         },
-        
+        {
+          // Personalizar flecha para avanzar a la pool
+          pitch: -20, // Alinear la altura de la flecha
+          yaw: -167, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenapool1",
+          cssClass: "flecha-personalizada",
+        },
+        {
+          // Personalizar flecha para avanzar
+          pitch: -11, // Alinear la altura de la flecha
+          yaw: 99, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenarestaurant1",
+          cssClass: "flecha-personalizada",
+        },
       ],
     },
+
+    
 
     escena5: {
       title: "",
       type: "equirectangular",
       panorama: "images/7.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: 180, // Centrar la vista inicial
+      yaw: 173, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
           // Personalizar flecha para avanzar
           pitch: -11, // Alinear la altura de la flecha
-          yaw: 14, // Alinear la posición horizontal de la flecha
+          yaw: -193, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena6",
@@ -233,10 +303,10 @@ const tourConfig = {
         },
         {
           // Personalizar flecha para regresar
-          pitch: -10, // Alinear la altura de la flecha
-          yaw: -175, // Alinear la posición horizontal de la flecha
+          pitch: -21, // Alinear la altura de la flecha
+          yaw: -13, // Alinear la posición horizontal de la flecha
           type: "scene",
-          text: "Back",
+          text: "",
           sceneId: "escena4",
           cssClass: "flecha-personalizada",
         },
@@ -248,36 +318,28 @@ const tourConfig = {
       type: "equirectangular",
       panorama: "images/8.jpg",
       pitch: -4, // Alinear la altura de la vista
-      yaw: 40, // Centrar la vista inicial
+      yaw: 7, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
         {
-          // Personalizar flecha para playa
-          pitch: -11, // Alinear la altura de la flecha
-          yaw: -50, // Alinear la posición horizontal de la flecha
+          // Personalizar flecha para avanzar
+          pitch: -16, // Alinear la altura de la flecha
+          yaw: 1, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena7",
           cssClass: "flecha-personalizada",
         },
         {
-          // Personalizar flecha para regresar
+          // Personalizar flecha para regresar 
           pitch: -12, // Alinear la altura de la flecha
-          yaw: -140, // Alinear la posición horizontal de la flecha
+          yaw: 175, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena5",
           cssClass: "flecha-personalizada",
         },
-        {
-          // Personalizar flecha para pool
-          pitch: -12, // Alinear la altura de la flecha
-          yaw: 129, // Alinear la posición horizontal de la flecha
-          type: "scene",
-          text: "",
-          sceneId: "escena9",
-          cssClass: "flecha-personalizada",
-        },
+
       ],
     },
 
@@ -286,13 +348,13 @@ const tourConfig = {
       type: "equirectangular",
       panorama: "images/9.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: 33, // Centrar la vista inicial
+      yaw: 10, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
         {
           // Personalizar flecha para avanzar
-          pitch: -11, // Alinear la altura de la flecha
-          yaw: 28, // Alinear la posición horizontal de la flecha
+          pitch: -14, // Alinear la altura de la flecha
+          yaw: 4, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena8",
@@ -301,10 +363,19 @@ const tourConfig = {
         {
           // Personalizar flecha para regresar
           pitch: -17, // Alinear la altura de la flecha
-          yaw: -145, // Alinear la posición horizontal de la flecha
+          yaw: -185, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena6",
+          cssClass: "flecha-personalizada",
+        },
+        {
+          // Personalizar flecha para regresar
+          pitch: -10, // Alinear la altura de la flecha
+          yaw: -90, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenaextra2",
           cssClass: "flecha-personalizada",
         },
       ],
@@ -315,73 +386,22 @@ const tourConfig = {
       type: "equirectangular",
       panorama: "images/10.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: -90, // Centrar la vista inicial
+      yaw: 2, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
         {
           // Personalizar flecha para regresar
-          pitch: -10, // Alinear la altura de la flecha
-          yaw: 85, // Alinear la posición horizontal de la flecha
+          pitch: -15, // Alinear la altura de la flecha
+          yaw: -186, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena7",
           cssClass: "flecha-personalizada",
         },
-      ],
-    },
-
-    // ESCENAS DE LA POOL
-
-    escena9: {
-      title: "",
-      type: "equirectangular",
-      panorama: "imagenes/imgpool.jpg",
-      pitch: -2, // Alinear la altura de la vista
-      yaw: 20, // Centrar la vista inicial
-      hfov: 115, // Zoom para computadora 💻
-      hotSpots: [
         {
           // Personalizar flecha para avanzar
-          pitch: -9, // Alinear la altura de la flecha
-          yaw: 22, // Alinear la posición horizontal de la flecha
-          type: "scene",
-          text: "",
-          sceneId: "escena10",
-          cssClass: "flecha-personalizada",
-        },
-        {
-          // Personalizar flecha para regresar
-          pitch: -12.5, // Alinear la altura de la flecha
-          yaw: -149, // Alinear la posición horizontal de la flecha
-          type: "scene",
-          text: "",
-          sceneId: "escena6",
-          cssClass: "flecha-personalizada",
-        },
-      ],
-    },
-
-    escena10: {
-      title: "",
-      type: "equirectangular",
-      panorama: "imagenes/poolcentro.jpg",
-      pitch: -2, // Alinear la altura de la vista
-      yaw: -65, // Centrar la vista inicial
-      hfov: 115, // Zoom para computadora 💻
-      hotSpots: [
-        {
-          // Personalizar flecha para avanzar
-          pitch: -14, // Alinear la altura de la flecha
-          yaw: 76, // Alinear la posición horizontal de la flecha
-          type: "scene",
-          text: "",
-          sceneId: "escena11",
-          cssClass: "flecha-personalizada",
-        },
-        {
-          // Personalizar flecha para regresar
-          pitch: -10, // Alinear la altura de la flecha
-          yaw: -75, // Alinear la posición horizontal de la flecha
+          pitch: -19, // Alinear la altura de la flecha
+          yaw: -2, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena9",
@@ -390,26 +410,127 @@ const tourConfig = {
       ],
     },
 
-    escena11: {
+  
+
+    escena9: {
       title: "",
       type: "equirectangular",
-      panorama: "imagenes/pool3.jpg",
+      panorama: "images/12.jpg",
       pitch: -2, // Alinear la altura de la vista
-      yaw: -140, // Centrar la vista inicial
+      yaw: 5, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
       hotSpots: [
         {
-          // Personalizar flecha para regresar
-          pitch: -10, // Alinear la altura de la flecha
-          yaw: 190, // Alinear la posición horizontal de la flecha
+          // Personalizar flecha para avanzar
+          pitch: -8, // Alinear la altura de la flecha
+          yaw: 95, // Alinear la posición horizontal de la flecha
           type: "scene",
           text: "",
           sceneId: "escena10",
           cssClass: "flecha-personalizada",
         },
+        {
+          // Personalizar flecha para regresar
+          pitch: -13, // Alinear la altura de la flecha
+          yaw: -180, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena8",
+          cssClass: "flecha-personalizada",
+        },
       ],
     },
 
+    escena10: {
+      title: "",
+      type: "equirectangular",
+      panorama: "images/13.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: -75, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 💻
+      hotSpots: [
+        {
+          // Personalizar flecha para regresar
+          pitch: -10, // Alinear la altura de la flecha
+          yaw: -80, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena9",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
+
+// escenas de la pool
+
+    escenapool1: {
+      title: "",
+      type: "equirectangular",
+      panorama: "images/pool-1.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: -170, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 💻
+      hotSpots: [
+        {
+          // Personalizar flecha para regresar
+          pitch: -17, // Alinear la altura de la flecha
+          yaw: 4, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena4",
+          cssClass: "flecha-personalizada",
+        },
+        {
+          // Personalizar flecha para avanzar
+          pitch: -24, // Alinear la altura de la flecha
+          yaw: -182, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenapool2",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
+    escenapool2: {
+      title: "",
+      type: "equirectangular",
+      panorama: "images/pool-2.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: -22, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 💻
+      hotSpots: [
+        {
+          // Personalizar flecha para regresar
+          pitch: -19, // Alinear la altura de la flecha
+          yaw: -29, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escenapool1",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
+
+    // escenas del restaurant
+    escenarestaurant1: { 
+      title: "",
+      type: "equirectangular",
+      panorama: "images/restaurant-2.jpg",
+      pitch: -2, // Alinear la altura de la vista
+      yaw: 90, // Centrar la vista inicial
+      hfov: 115, // Zoom para computadora 
+      hotSpots: [
+        {
+          // Personalizar flecha para regresar
+          pitch: -15, // Alinear la altura de la flecha
+          yaw: -95, // Alinear la posición horizontal de la flecha
+          type: "scene",
+          text: "",
+          sceneId: "escena4",
+          cssClass: "flecha-personalizada",
+        },
+      ],
+    },
   },
 };
 
@@ -433,8 +554,13 @@ const hotspotNadir = {
     "cssClass": "nadir-hotspot"
 };
 
+
+
 // 2. Recorremos todas las escenas y les inyectamos el logo
 Object.values(tourConfig.scenes).forEach(scene => {
+
+    // Ajustamos los topes de cada escena para evitar mirar al suelo
+    scene.minPitch = -50;  // Tope hacia ABAJO (evita mirar al suelo)
     // Si la escena no tiene lista de hotspots, creamos una vacía
     if (!scene.hotSpots) {
         scene.hotSpots = [];
@@ -444,6 +570,8 @@ Object.values(tourConfig.scenes).forEach(scene => {
 });
 
 // =============================================================
+
+
 
 // 4. Cargamos el visor Y LO GUARDAMOS EN UNA VARIABLE
 const viewer = pannellum.viewer("panorama", tourConfig);
