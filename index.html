@@ -13,11 +13,20 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
     <style>
+    /* --- RESETEO OBLIGATORIO PARA PANTALLA COMPLETA --- */
+    body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* <--- ESTO MATA EL SCROLL Y EL ESPACIO BLANCO */
+  }
+
+
     /*Estilo del visor principal*/
     #panorama {
-      width: 98.4vw;
-      height: 98.4vh; 
-      
+    width: 100vw;  /* Ocupa todo el ancho */
+    height: 100vh; /* Ocupa todo el alto */
     }
 
     /* --- Estilo para el menu desplegable --- */
@@ -157,8 +166,7 @@
   </style>
   </head>
   <body>
-    <div id="miCursor"></div> <div id="panorama"></div>
-
+    <div id="miCursor"></div>
     <!--Agrega un menú desplegable para seleccionar escenas-->
     <select id="menu-escenas">
     <option value="escena1">1. Entrada Principal</option>
