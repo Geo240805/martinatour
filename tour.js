@@ -466,7 +466,7 @@ const tourConfig = {
     escenapool1: {
       title: "",
       type: "equirectangular",
-      panorama: "images/pool-1.jpg",
+      panorama: "images/pool1.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: -170, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -494,7 +494,7 @@ const tourConfig = {
     escenapool2: {
       title: "",
       type: "equirectangular",
-      panorama: "images/pool-2.jpg",
+      panorama: "images/pool2.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: -22, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 💻
@@ -515,7 +515,7 @@ const tourConfig = {
     escenarestaurant1: { 
       title: "",
       type: "equirectangular",
-      panorama: "images/restaurant-2.jpg",
+      panorama: "images/restaurant2.jpg",
       pitch: -2, // Alinear la altura de la vista
       yaw: 90, // Centrar la vista inicial
       hfov: 115, // Zoom para computadora 
